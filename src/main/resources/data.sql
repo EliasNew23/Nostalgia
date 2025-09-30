@@ -1,6 +1,7 @@
 ------- Nombrando las categorias 1(cafe) - 2(Postre)
-INSERT INTO Categoria (nombre_categoria) VALUES (1,'Café');
-INSERT INTO Categoria (nombre_categoria) VALUES (2,'Postre');
+INSERT INTO Categoria (nombre_categoria) VALUES ('Café');
+INSERT INTO Categoria (nombre_categoria) VALUES ('Torta');
+INSERT INTO Categoria (nombre_categoria) VALUES ('Postre');
 
 --------producto Categoria 1 (cafe)
 INSERT INTO Producto (nombre, precio, stock, id_categoria) VALUES
@@ -12,7 +13,38 @@ INSERT INTO Producto (nombre, precio, stock, id_categoria) VALUES
 ('Café filtrado', 10,20, 1),
 ('Café bombón', 16,20, 1),
 ('Café Dalgona', 14.5,20, 1),
-('Café macchiato', 11,20, 1);
+('Café macchiato', 11,20, 1),
+('Flat White', 12, 20, 1),
+('Affogato', 15, 20, 1),
+('Café irlandés', 18, 20, 1),
+('Ristretto', 9, 20, 1),
+('Café vienés', 14, 20, 1),
+('Café cortado', 10, 20, 1),
+('Café turco', 13, 20, 1),
+('Café árabe', 14, 20, 1),
+('Café con miel', 12.5, 20, 1),
+('Café frío', 11, 20, 1),
+('Cold Brew', 13.5, 20, 1),
+('Nitro Coffee', 16, 20, 1),
+('Café frappe', 15, 20, 1),
+('Café helado', 14, 20, 1),
+('Café vainilla', 13, 20, 1),
+('Café caramelo', 13.5, 20, 1),
+('Café avellana', 14, 20, 1),
+('Café chocolate blanco', 15, 20, 1),
+('Café moka frío', 16, 20, 1),
+('Café matcha latte', 17, 20, 1),
+('Café chai latte', 15, 20, 1),
+('Café con leche condensada', 14, 20, 1),
+('Café con crema batida', 15, 20, 1),
+('Café con especias', 13.5, 20, 1),
+('Café miel y canela', 14, 20, 1),
+('Café tónica', 16, 20, 1),
+('Café con almendra', 15, 20, 1),
+('Café con avena', 14.5, 20, 1),
+('Café moka menta', 16, 20, 1),
+('Café dulce de leche', 17, 20, 1);
+
 -----------producto Categoria 2 (postre)
 INSERT INTO Producto(nombre, precio, stock, id_categoria)VALUES 
 ('Tarta Vianner', 17, 9, 2),
@@ -23,9 +55,48 @@ INSERT INTO Producto(nombre, precio, stock, id_categoria)VALUES
 ('Pávlola', 18.5, 15, 2),
 ('Pastafrolar', 17.5, 7, 2),
 ('Mousse', 15, 7, 2),
-('Mazamorra moradar', 15, 22, 2),
-('TBasbousa', 21, 10, 2);
+('TBasbousa', 21, 10, 2),
+('Torta de chocolate', 28, 10, 2),
+('Torta Selva Negra', 32, 7, 2),
+('Torta Red Velvet', 30, 9, 2),
+('Torta de zanahoria', 27, 8, 2),
+('Torta de tres leches', 29, 6, 2),
+('Torta de maracuyá', 31, 10, 2),
+('Torta de fresa con crema', 30, 12, 2),
+('Torta de vainilla clásica', 26, 15, 2),
+('Torta de moka', 29, 9, 2),
+('Torta de manzana', 28, 11, 2),
+('Torta de queso', 32, 10, 2),
+('Torta de oreo', 33, 8, 2),
+('Torta de coco', 27, 13, 2),
+('Torta de lúcuma', 31, 7, 2),
+('Torta helada', 30, 6, 2),
+('Torta de brownie', 34, 5, 2),
+('Torta con frutos secos', 32, 9, 2),
+('Torta de plátano y nuez', 27, 12, 2),
+('Torta de almendras', 33, 8, 2),
+('Torta marmoleada', 28, 10, 2);
 
 --------insert para el cliente
 INSERT INTO Cliente (nombre, apellido, correo, telefono) VALUES 
-('Pedro', 'Castillo', 'pedro@gmail.com', '987654321');
+('Pedro', 'Castillo', 'pedro@gmail.com', '987654321'),
+('María', 'González', 'maria.gonzalez@gmail.com', '987111222'),
+('Luis', 'Ramírez', 'luis.ramirez@hotmail.com', '987222333'),
+('Ana', 'Torres', 'ana.torres@yahoo.com', '987333444'),
+('Jorge', 'Fernández', 'jorge.fernandez@gmail.com', '987444555'),
+('Lucía', 'Martínez', 'lucia.martinez@gmail.com', '987555666'),
+('Carlos', 'Díaz', 'carlos.diaz@gmail.com', '987666777'),
+('Valeria', 'Castro', 'valeria.castro@hotmail.com', '987007888'),
+('Andrés', 'Reyes', 'andres.reyes@gmail.com', '987865999'),
+('Rosa', 'López', 'rosa.lopez@yahoo.com', '987999000'),
+('Miguel', 'Sánchez', 'miguel.sanchez@gmail.com', '987123456'),
+('Julieta', 'Morales', 'julieta.morales@hotmail.com', '987234567'),
+('Fernando', 'Paredes', 'fernando.paredes@gmail.com', '987345678'),
+('Elena', 'Vega', 'elena.vega@yahoo.com', '987456789'),
+('Sofía', 'Ortega', 'sofia.ortega@gmail.com', '987567890'),
+('Daniel', 'Navarro', 'daniel.navarro@hotmail.com', '987678901'),
+('Camila', 'Herrera', 'camila.herrera@gmail.com', '987789012'),
+('Raúl', 'Guerrero', 'raul.guerrero@gmail.com', '987890123'),
+('Patricia', 'Flores', 'patricia.flores@yahoo.com', '987901234'),
+('Héctor', 'Cruz', 'hector.cruz@gmail.com', '987012345'),
+('Gabriela', 'Ramos', 'gabriela.ramos@hotmail.com', '987135792');

@@ -7,13 +7,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 @Controller
 public class MiControlador {
 
-    @GetMapping("/hola")
-    public String holaMundo(Model model) {
-        System.out.println("test");
-        model.addAttribute("mensaje", "¡Hola desde Spring Boot!");
-        return "vista";
-    }
-
     /* Nuevo */
     @GetMapping("/catalogo")
     public String catalogo(Model model) {

@@ -29,17 +29,6 @@ CREATE TABLE Cliente (
     telefono VARCHAR(20)
 );
 
-
--- Tabla Empleado
-
-CREATE TABLE Empleado (
-    id_empleado INT AUTO_INCREMENT PRIMARY KEY,
-    nombre VARCHAR(50) NOT NULL,
-    apellido VARCHAR(50) NOT NULL,
-    cargo VARCHAR(50) NOT NULL
-);
-
-
 -- Tabla Venta
 
 CREATE TABLE Venta (
