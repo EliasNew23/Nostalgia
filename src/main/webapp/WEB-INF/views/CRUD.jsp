@@ -655,17 +655,30 @@
 
                 <main>
                     <h2>Agregar Producto</h2>
-                    <form>
-                        <input type="text" placeholder="Nombre del producto" required>
-                        <input type="number" placeholder="Precio (S/.)" required>
-                        <input type="number" placeholder="Stock disponible" required>
-                        <select>
-                            <option value="">Categoría</option>
-                            <option>Café</option>
-                            <option>Pasteles</option>
-                        </select>
+                    <form:form action="/producto/crear" method="post" modelAttribute="producto">
+                        
+                        <label for="nombre">Nombre:</label>
+                        <form:input path="nombre" id="nombre" placeholder="Nombre del producto" required="true"/>
+                        <br>
+                        
+                        <label for="precio">Precio (S/.):</label>
+                        <form:input path="precio" id="precio" type="number" placeholder="Precio" required="true"/>
+                        <br>
+                        
+                        <label for="stock">Stock:</label>
+                        <form:input path="stock" id="stock" type="number" placeholder="Stock disponible" required="true"/>
+                        <br>
+                        
+                        <label for="categoria">Categoría:</label>
+                        <form:select path="categoria" id="categoria" required="true">
+                            <form:option value="">Selecciona categoría</form:option>
+                            <form:option value="Café">Café</form:option>
+                            <form:option value="Pasteles">Pasteles</form:option>
+                        </form:select>
+                        <br>
+                        
                         <button type="submit">Agregar Producto</button>
-                    </form>
+                    </form:form>
 
                     <h2>Lista de Productos</h2>
                     <table>
