@@ -1,55 +1,53 @@
-
--- Tabla Categoría
-
-CREATE TABLE Categoria (
-    id_categoria INT AUTO_INCREMENT PRIMARY KEY,
-    nombre_categoria VARCHAR(50) NOT NULL
+-- Tabla Roles (Cliente, Administrador)
+CREATE TABLE Rol (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    nombre_rol VARCHAR(50) NOT NULL UNIQUE,
+    fechaCreacion date not null
 );
 
+-- Tabla Usuarios
+CREATE TABLE Cliente (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    nombre VARCHAR(100) NOT NULL,
+    email VARCHAR(100) NOT NULL UNIQUE,
+    contraseña VARCHAR(255) NOT NULL,
+    rol_id INT NOT NULL,
+    FOREIGN KEY (rol_id) REFERENCES Rol(id)
+);
 
--- Tabla Producto
+-- Tabla Categorías de productos (Café, Torta)
+CREATE TABLE Categoria (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    nombre VARCHAR(50) NOT NULL UNIQUE,
+    fechaCreacion date not null
+);
 
+-- Tabla Productos
 CREATE TABLE Producto (
-    id_producto INT AUTO_INCREMENT PRIMARY KEY,
+    id INT PRIMARY KEY AUTO_INCREMENT,
     nombre VARCHAR(100) NOT NULL,
     precio DECIMAL(10,2) NOT NULL,
-    stock INT NOT NULL,
-    id_categoria INT NOT NULL,
-    FOREIGN KEY (id_categoria) REFERENCES Categoria(id_categoria)
+    fechaCreacion date not null
+    categoria_id INT NOT NULL,
+    stock INT NOT NULL DEFAULT 0,
+    FOREIGN KEY (categoria_id) REFERENCES Categoria(id)
 );
-
-
--- Tabla Cliente
-
-CREATE TABLE Cliente (
-    id_cliente INT AUTO_INCREMENT PRIMARY KEY,
-    nombre VARCHAR(50) NOT NULL,
-    apellido VARCHAR(50) NOT NULL,
-    correo VARCHAR(100),
-    telefono VARCHAR(20)
-);
-
--- Tabla Venta
-
-CREATE TABLE Venta (
-    id_venta INT AUTO_INCREMENT PRIMARY KEY,
-    fecha DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
+-- Tabla Compras realizadas por clientes
+CREATE TABLE Compra (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    cliente_id INT NOT NULL,
+    fecha DATETIME DEFAULT CURRENT_TIMESTAMP,
     total DECIMAL(10,2) NOT NULL,
-    id_cliente INT NOT NULL,
-    id_empleado INT NOT NULL,
-    FOREIGN KEY (id_cliente) REFERENCES Cliente(id_cliente),
-    FOREIGN KEY (id_empleado) REFERENCES Empleado(id_empleado)
+    FOREIGN KEY (cliente_id) REFERENCES Cliente(id)
 );
 
-
--- Tabla DetalleVenta
-
-CREATE TABLE DetalleVenta (
-    id_detalle INT AUTO_INCREMENT PRIMARY KEY,
-    id_venta INT NOT NULL,
-    id_producto INT NOT NULL,
+-- Detalles de cada compra (productos comprados y cantidades)
+CREATE TABLE DetalleCompra (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    compra_id INT NOT NULL,
+    producto_id INT NOT NULL,
     cantidad INT NOT NULL,
     subtotal DECIMAL(10,2) NOT NULL,
-    FOREIGN KEY (id_venta) REFERENCES Venta(id_venta),
-    FOREIGN KEY (id_producto) REFERENCES Producto(id_producto)
+    FOREIGN KEY (compra_id) REFERENCES Compra(id) ON DELETE CASCADE,
+    FOREIGN KEY (producto_id) REFERENCES Producto(id)
 );
