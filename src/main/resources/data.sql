@@ -78,7 +78,7 @@ INSERT INTO Producto(nombre, precio, stock, id_categoria)VALUES
 ('Torta marmoleada', 28, 10, 2);
 
 --------insert para el cliente
-INSERT INTO Cliente (nombre, apellido, correo, telefono) VALUES 
+INSERT INTO Cliente (id, nombre, apellido, correo, telefono) VALUES 
 ('Pedro', 'Castillo', 'pedro@gmail.com', '987654321'),
 ('María', 'González', 'maria.gonzalez@gmail.com', '987111222'),
 ('Luis', 'Ramírez', 'luis.ramirez@hotmail.com', '987222333'),
@@ -100,3 +100,5 @@ INSERT INTO Cliente (nombre, apellido, correo, telefono) VALUES
 ('Patricia', 'Flores', 'patricia.flores@yahoo.com', '987901234'),
 ('Héctor', 'Cruz', 'hector.cruz@gmail.com', '987012345'),
 ('Gabriela', 'Ramos', 'gabriela.ramos@hotmail.com', '987135792');
+
+INSERT INTO Rol (nombre_rol) VALUES ('Cliente'), ('Administrador');
